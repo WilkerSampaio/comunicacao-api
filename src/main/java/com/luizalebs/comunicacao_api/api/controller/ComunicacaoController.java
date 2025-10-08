@@ -43,4 +43,12 @@ public class ComunicacaoController {
     public ResponseEntity<ComunicacaoOutDTO> cancelarStatus(@RequestParam String emailDestinatario) {
         return ResponseEntity.ok(service.alterarStatusComunicacao(emailDestinatario));
     }
+
+    @PostMapping("/mensagem")
+    @ApiResponse(responseCode = "200", description = "Operação realizada com sucesso")
+    @ApiResponse(responseCode = "500", description = "Erro de servidor")
+    public ResponseEntity<Void> enviarMensagem(@RequestBody ComunicacaoInDTO comunicacaoInDTO){
+        service.enviarEmail(comunicacaoInDTO);
+        return ResponseEntity.ok().build();
+    }
 }

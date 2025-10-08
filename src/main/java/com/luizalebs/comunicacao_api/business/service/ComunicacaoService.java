@@ -3,6 +3,7 @@ package com.luizalebs.comunicacao_api.business.service;
 import com.luizalebs.comunicacao_api.api.dto.ComunicacaoInDTO;
 import com.luizalebs.comunicacao_api.api.dto.ComunicacaoOutDTO;
 import com.luizalebs.comunicacao_api.business.converter.ComunicacaoConverter;
+import com.luizalebs.comunicacao_api.infraestructure.client.EmailClient;
 import com.luizalebs.comunicacao_api.infraestructure.entities.ComunicacaoEntity;
 import com.luizalebs.comunicacao_api.infraestructure.enums.StatusEnvioEnum;
 import com.luizalebs.comunicacao_api.infraestructure.repositories.ComunicacaoRepository;
@@ -15,10 +16,12 @@ public class ComunicacaoService {
 
     private final ComunicacaoRepository repository;
     private final ComunicacaoConverter converter;
+    private final EmailClient emailClient;
 
-    public ComunicacaoService(ComunicacaoRepository repository, ComunicacaoConverter converter) {
+    public ComunicacaoService(ComunicacaoRepository repository, ComunicacaoConverter converter,EmailClient emailClient) {
         this.repository = repository;
         this.converter = converter;
+        this.emailClient = emailClient;
     }
 
     public ComunicacaoOutDTO agendarComunicacao(ComunicacaoInDTO dto) {
@@ -48,6 +51,10 @@ public class ComunicacaoService {
         entity.setStatusEnvio(StatusEnvioEnum.CANCELADO);
         repository.save(entity);
         return (converter.paraDTO(entity));
+    }
+
+    public void enviarEmail(ComunicacaoInDTO comunicacaoInDTO){
+          emailClient.enviarEmail(comunicacaoInDTO);
     }
 
 }
