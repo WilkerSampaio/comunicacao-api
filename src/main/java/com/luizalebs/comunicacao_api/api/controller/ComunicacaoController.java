@@ -47,7 +47,7 @@ public class ComunicacaoController {
     @PostMapping("/mensagem")
     @ApiResponse(responseCode = "200", description = "Operação realizada com sucesso")
     @ApiResponse(responseCode = "500", description = "Erro de servidor")
-    public ResponseEntity<String> enviarMensagem(@RequestBody ComunicacaoInDTO comunicacaoInDTO){
+    public ResponseEntity<String> enviarMensagemImediatamente(@RequestBody ComunicacaoInDTO comunicacaoInDTO){
         return ResponseEntity.ok(service.enviarEmail(comunicacaoInDTO));
     }
 }
