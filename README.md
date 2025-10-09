@@ -23,3 +23,5 @@
 - **Método HTTP**: `POST`
 - **Caminho**: `/comunicacao/mensagem`
 - **Descrição**: Envia a mensagem imediatamente para o destinatário.
+
+<img width="610" height="296" alt="image" src="https://github.com/user-attachments/assets/605ea198-54cd-45d7-be95-29084c208dcb" />
