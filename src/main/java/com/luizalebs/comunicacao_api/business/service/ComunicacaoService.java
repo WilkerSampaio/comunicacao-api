@@ -53,8 +53,8 @@ public class ComunicacaoService {
         return (converter.paraDTO(entity));
     }
 
-    public void enviarEmail(ComunicacaoInDTO comunicacaoInDTO){
-          emailClient.enviarEmail(comunicacaoInDTO);
+    public String enviarEmail(ComunicacaoInDTO comunicacaoInDTO){
+          return emailClient.enviarEmail(comunicacaoInDTO);
     }
 
 }

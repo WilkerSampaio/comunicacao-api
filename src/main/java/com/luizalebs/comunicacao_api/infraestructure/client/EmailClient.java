@@ -8,5 +8,5 @@ import org.springframework.web.bind.annotation.PostMapping;
 public interface EmailClient {
 
     @PostMapping
-    void enviarEmail(ComunicacaoInDTO comunicacaoInDTO);
+    String enviarEmail(ComunicacaoInDTO comunicacaoInDTO);
 }
