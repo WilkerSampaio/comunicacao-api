@@ -1,5 +1,22 @@
-# Default ignored files
-/shelf/
-/workspace.xml
-# Environment-dependent path to Maven home directory
-/mavenHomeManager.xml
+# Ignorar subprojetos com seus próprios repositórios Git
+agendador-tarefas-api/
+aprendendo-api/
+bff-agendador-tarefas-api/
+cadastro-usuario/
+comunicacao-api/
+notificacao/
+notificacao-mensagem/
+primeiro-projeto/
+usuario-api/
+
+# Ignorar arquivos e pastas comuns de Java e IDEs
+*.class
+*.log
+*.tmp
+*.swp
+target/
+build/
+out/
+.idea/
+.vscode/
+.DS_Store
