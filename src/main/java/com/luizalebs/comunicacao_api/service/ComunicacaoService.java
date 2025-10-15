@@ -5,6 +5,8 @@ import com.luizalebs.comunicacao_api.api.dto.ComunicacaoOutDTO;
 import com.luizalebs.comunicacao_api.infraestructure.client.EmailClient;
 import com.luizalebs.comunicacao_api.infraestructure.entities.ComunicacaoEntity;
 import com.luizalebs.comunicacao_api.infraestructure.enums.StatusEnvioEnum;
+import com.luizalebs.comunicacao_api.infraestructure.exception.BadRequestException;
+import com.luizalebs.comunicacao_api.infraestructure.exception.ResourceNotFoundException;
 import com.luizalebs.comunicacao_api.infraestructure.mapper.ComunicacaoMapper;
 import com.luizalebs.comunicacao_api.infraestructure.repositories.ComunicacaoRepository;
 import org.springframework.stereotype.Service;
@@ -26,7 +28,7 @@ public class ComunicacaoService {
 
     public ComunicacaoOutDTO agendarComunicacao(ComunicacaoInDTO comunicacaoInDTO) {
         if (Objects.isNull(comunicacaoInDTO)) {
-            throw new RuntimeException();
+            throw new BadRequestException("Dados de entrada inválidos.");
         }
         comunicacaoInDTO.setStatusEnvio(StatusEnvioEnum.PENDENTE);
         ComunicacaoEntity comunicacaoEntity = comunicacaoMapper.paraComunicacaoEntity(comunicacaoInDTO);
@@ -35,19 +37,18 @@ public class ComunicacaoService {
     }
 
     public ComunicacaoOutDTO buscarStatusComunicacao(String emailDestinatario) {
-        ComunicacaoEntity comunicacaoEntity = repository.findByEmailDestinatario(emailDestinatario);
-        if (Objects.isNull(comunicacaoEntity)) {
-            throw new RuntimeException();
-        }
+        ComunicacaoEntity comunicacaoEntity = repository.findByEmailDestinatario(emailDestinatario).orElseThrow(
+                () -> new ResourceNotFoundException("Recurso não encontrado"));
+
         return comunicacaoMapper.paraComunicacaoOutDTO(comunicacaoEntity);
     }
 
     public ComunicacaoOutDTO alterarStatusComunicacao(String emailDestinatario) {
-        ComunicacaoEntity comunicacaoEntity = repository.findByEmailDestinatario(emailDestinatario);
-        if (Objects.isNull(comunicacaoEntity)) {
-            throw new RuntimeException();
-        }
+        ComunicacaoEntity comunicacaoEntity = repository.findByEmailDestinatario(emailDestinatario).orElseThrow(
+                () -> new ResourceNotFoundException("Recurso não encontrado"));
+
         comunicacaoEntity.setStatusEnvio(StatusEnvioEnum.CANCELADO);
+
         return comunicacaoMapper.paraComunicacaoOutDTO(repository.save(comunicacaoEntity));
     }
 

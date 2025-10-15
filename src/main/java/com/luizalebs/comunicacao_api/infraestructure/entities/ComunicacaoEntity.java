@@ -5,8 +5,7 @@ import com.luizalebs.comunicacao_api.infraestructure.enums.StatusEnvioEnum;
 import jakarta.persistence.*;
 import lombok.*;
 
-import java.io.Serializable;
-import java.util.Date;
+import java.time.LocalDateTime;
 
 @Getter
 @Setter
@@ -16,32 +15,32 @@ import java.util.Date;
 @Builder
 @Entity
 @Table(name = "COMUNICACAO")
-public class ComunicacaoEntity implements Serializable {
+public class ComunicacaoEntity  {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(name = "HORA_ENVIO", nullable = false)
-    private Date dataHoraenvio;
+    @Column(name = "dataHoraEnvio")
+    private LocalDateTime dataHoraEnvio;
 
-    @Column(name = "NOME_DESTINATARIO", nullable = false)
+    @Column(name = "nomeDestinatario", nullable = false)
     private String nomeDestinatario;
 
-    @Column(name = "EMAIL_DESTINATARIO", nullable = false, unique = true)
+    @Column(name = "emailDestinatario", nullable = false, unique = true)
     private String emailDestinatario;
 
-    @Column(name = "TELEFONE_DESTINATARIO")
+    @Column(name = "telefoneDestinatario")
     private String telefoneDestinatario;
 
-    @Column(name = "MENSAGEM", nullable = false)
+    @Column(name = "mensagem", nullable = false)
     private String mensagem;
 
-    @Column(name = "MODO_ENVIO")
+    @Column(name = "modoDeEnvio")
     @Enumerated(EnumType.STRING)
     private ModoEnvioEnum modoDeEnvio;
 
-    @Column(name = "STATUS_ENVIO")
+    @Column(name = "statusEnvio")
     @Enumerated(EnumType.STRING)
     private StatusEnvioEnum statusEnvio;
 
