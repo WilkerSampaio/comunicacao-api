@@ -14,7 +14,7 @@ import java.util.Date;
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
-@ToString
+@Data
 public class ComunicacaoOutDTO {
 
     private Long id;
