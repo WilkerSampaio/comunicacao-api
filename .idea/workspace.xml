@@ -5,14 +5,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="57c8d4e2-70c2-4023-b710-8cac06ec7e1e" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Dockerfile" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/luizalebs/comunicacao_api/api/dto/ComunicacaoInDTOFixture.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/luizalebs/comunicacao_api/api/dto/ComunicacaoOutDTOFixture.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/luizalebs/comunicacao_api/infrastructure/mapper/ComunicacaoMapperTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/luizalebs/comunicacao_api/api/dto/ComunicacaoInDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/luizalebs/comunicacao_api/api/dto/ComunicacaoInDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/luizalebs/comunicacao_api/api/dto/ComunicacaoOutDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/luizalebs/comunicacao_api/api/dto/ComunicacaoOutDTO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/luizalebs/comunicacao_api/ComunicacaoApiApplicationTests.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/generated-sources/annotations/com/luizalebs/comunicacao_api/infraestructure/mapper/ComunicacaoMapperImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/target/generated-sources/annotations/com/luizalebs/comunicacao_api/infraestructure/mapper/ComunicacaoMapperImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/com/luizalebs/comunicacao_api/ComunicacaoApiApplicationTests.class" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -23,8 +26,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Interface" />
-        <option value="Class" />
         <option value="Exception" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -43,19 +46,23 @@
 }</component>
   <component name="ProjectId" id="33l6MCf2AfK8vRZFmjc5VcQCpto" />
   <component name="ProjectViewState">
-    <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "Application.ComunicacaoApiApplication.executor": "Run",
+    "JUnit.ComunicacaoMapperTest.deveConverterParaEntityComSucesso.executor": "Run",
+    "JUnit.ComunicacaoMapperTest.deveConverterParaResponseComSucesso.executor": "Run",
     "Maven.comunicacao_api [clean,package].executor": "Run",
     "ModuleVcsDetector.initialDetectionPerformed": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "main",
+    "git-widget-placeholder": "feature/docker",
     "ignore.virus.scanning.warn.message": "true",
-    "last_opened_file_path": "C:/Users/neoxe/Desktop/projetos/comunicacao-api"
+    "last_opened_file_path": "C:/Users/neoxe/Desktop/projetos/comunicacao_api",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0"
   }
 }]]></component>
   <component name="RecentsManager">
@@ -68,6 +75,62 @@
       <command value="mvn clean package" />
     </option>
   </component>
+  <component name="RunManager" selected="JUnit.ComunicacaoMapperTest">
+    <configuration name="ComunicacaoMapperTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="comunicacao_api" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.luizalebs.comunicacao_api.infrastructure.mapper.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.luizalebs.comunicacao_api.infrastructure.mapper" />
+      <option name="MAIN_CLASS_NAME" value="com.luizalebs.comunicacao_api.infrastructure.mapper.ComunicacaoMapperTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ComunicacaoMapperTest.deveConverterParaEntityComSucesso" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="comunicacao_api" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.luizalebs.comunicacao_api.infrastructure.mapper.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.luizalebs.comunicacao_api.infrastructure.mapper" />
+      <option name="MAIN_CLASS_NAME" value="com.luizalebs.comunicacao_api.infrastructure.mapper.ComunicacaoMapperTest" />
+      <option name="METHOD_NAME" value="deveConverterParaEntityComSucesso" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ComunicacaoMapperTest.deveConverterParaResponseComSucesso" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="comunicacao_api" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.luizalebs.comunicacao_api.infrastructure.mapper.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.luizalebs.comunicacao_api.infrastructure.mapper" />
+      <option name="MAIN_CLASS_NAME" value="com.luizalebs.comunicacao_api.infrastructure.mapper.ComunicacaoMapperTest" />
+      <option name="METHOD_NAME" value="deveConverterParaResponseComSucesso" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JUnit.ComunicacaoMapperTest" />
+        <item itemvalue="JUnit.ComunicacaoMapperTest.deveConverterParaResponseComSucesso" />
+        <item itemvalue="JUnit.ComunicacaoMapperTest.deveConverterParaEntityComSucesso" />
+      </list>
+    </recent_temporary>
+  </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
       <changelist id="57c8d4e2-70c2-4023-b710-8cac06ec7e1e" name="Changes" comment="" />
@@ -79,6 +142,19 @@
     <servers />
   </component>
   <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/test/java/com/luizalebs/comunicacao_api/infrastructure/mapper/ComunicacaoMapperTest.java</url>
+          <line>87</line>
+          <properties class="com.luizalebs.comunicacao_api.infrastructure.mapper.ComunicacaoMapperTest" method="deveConverterParaResponseComSucesso">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="10" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
     <watches-manager>
       <configuration name="Application">
         <watch expression="this" language="JAVA" />
