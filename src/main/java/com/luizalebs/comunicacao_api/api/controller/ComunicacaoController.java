@@ -21,33 +21,33 @@ public class ComunicacaoController {
     }
 
     @Operation(summary = "Agenda mensagem", description = "Programa uma mensagem para ser enviada ao destinatário")
-    @PostMapping("/agendar")
     @ApiResponse(responseCode = "200", description = "Operação realizada com sucesso")
-    @ApiResponse(responseCode = "500", description = "Erro de servidor")
+    @ApiResponse(responseCode = "400", description = "Requisição inválida")
+    @PostMapping("/agendar")
     public ResponseEntity<ComunicacaoOutDTO> agendar(@RequestBody ComunicacaoInDTO dto)  {
         return ResponseEntity.ok(service.agendarComunicacao(dto));
     }
 
     @Operation(summary = "Dados da Mensagem", description = "Retornar todos os dados da comunicação")
     @ApiResponse(responseCode = "200", description = "Operação realizada com sucesso")
-    @ApiResponse(responseCode = "500", description = "Erro de servidor")
-    @GetMapping()
+    @ApiResponse(responseCode = "400", description = "Requisição inválida")
+    @GetMapping
     public ResponseEntity<ComunicacaoOutDTO> buscarStatus(@RequestParam String emailDestinatario) {
         return ResponseEntity.ok(service.buscarStatusComunicacao(emailDestinatario));
     }
 
     @Operation(summary = "Altera Status", description = "Altera o status da mensagem para cancelado")
     @ApiResponse(responseCode = "200", description = "Operação realizada com sucesso")
-    @ApiResponse(responseCode = "500", description = "Erro de servidor")
-    @PatchMapping("/cancelar")
+    @ApiResponse(responseCode = "400", description = "Requisição inválida")
+    @PatchMapping("/alterar")
     public ResponseEntity<ComunicacaoOutDTO> cancelarStatus(@RequestParam String emailDestinatario) {
         return ResponseEntity.ok(service.alterarStatusComunicacao(emailDestinatario));
     }
 
-    @PostMapping("/mensagem")
     @Operation(summary = "Envia Mensagem", description = "Envia mensagem imediatamente ao destinnatário")
     @ApiResponse(responseCode = "200", description = "Operação realizada com sucesso")
-    @ApiResponse(responseCode = "500", description = "Erro de servidor")
+    @ApiResponse(responseCode = "400", description = "Requisição inválida")
+    @PostMapping("/mensagem")
     public ResponseEntity<String> enviarMensagemImediatamente(@RequestBody ComunicacaoInDTO comunicacaoInDTO){
         return ResponseEntity.ok(service.enviarEmail(comunicacaoInDTO));
     }
