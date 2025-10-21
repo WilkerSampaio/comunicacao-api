@@ -1,6 +1,5 @@
 package com.luizalebs.comunicacao_api.api.dto;
 
-
 import com.luizalebs.comunicacao_api.infraestructure.enums.ModoEnvioEnum;
 import com.luizalebs.comunicacao_api.infraestructure.enums.StatusEnvioEnum;
 

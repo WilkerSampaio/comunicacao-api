@@ -16,13 +16,13 @@ public class GlobalExceptionHandler {
     }
 
     @ExceptionHandler(ResourceNotFoundException.class)
-    ResponseEntity<String> handleResourceNotFoundException (ResourceNotFoundException e){
-        return ResponseEntity.status(HttpStatus.NOT_FOUND).body(e.getMessage());
+    public ResponseEntity<String> handleResourceNotFoundException (ResourceNotFoundException e){
+       return ResponseEntity.status(HttpStatus.NOT_FOUND).body(e.getMessage());
     }
 
     @ExceptionHandler(EmailException.class)
-    ResponseEntity<String> handleEmailException (EmailException e){
-        return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(e.getMessage());
+    public ResponseEntity<String> handleEmailException (EmailException e){
+         return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(e.getMessage());
     }
 
 }
